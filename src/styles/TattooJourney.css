@@ -1,0 +1,134 @@
+.tattoo-journey {
+    padding: 4rem 1rem;
+    background: var(--black);
+    position: relative;
+  }
+  
+  .tattoo-journey h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--gold);
+  }
+  
+  .journey-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background: var(--red);
+  }
+  
+  .prev-button {
+    left: -70px;
+  }
+  
+  .next-button {
+    right: -70px;
+  }
+  
+  .journey-step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .step-image {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .step-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--red);
+  }
+  
+  .step-content p {
+    color: var(--gray-lighter);
+    line-height: 1.6;
+  }
+  
+  .step-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gray);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .indicator.active {
+    background: var(--red);
+  }
+  
+  @media (max-width: 1024px) {
+    .prev-button {
+      left: -30px;
+    }
+    
+    .next-button {
+      right: -30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .tattoo-journey h2 {
+      font-size: 2rem;
+    }
+    
+    .journey-step {
+      grid-template-columns: 1fr;
+    }
+    
+    .nav-button {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+    
+    .prev-button {
+      left: -10px;
+    }
+    
+    .next-button {
+      right: -10px;
+    }
+  }

@@ -1,0 +1,114 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .site-header.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--light);
+  }
+  
+  .logo span {
+    color: var(--red);
+  }
+  
+  .mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  
+  .main-nav a {
+    position: relative;
+    padding: 0.5rem 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--red);
+    transition: width 0.3s ease;
+  }
+  
+  .main-nav a:hover,
+  .main-nav a.active {
+    color: var(--red);
+  }
+  
+  .main-nav a:hover::after,
+  .main-nav a.active::after {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .mobile-menu-button {
+      display: block;
+    }
+    
+    .main-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      bottom: 0;
+      width: 80%;
+      max-width: 300px;
+      background: var(--black);
+      padding: 5rem 2rem;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+    
+    .main-nav.open {
+      right: 0;
+    }
+    
+    .main-nav ul {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .main-nav a {
+      font-size: 1.1rem;
+    }
+  }
